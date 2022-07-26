@@ -1,0 +1,5 @@
+firstNum=int(input())
+secondNum=int(input())
+thirdNum=int(input())
+
+print(max(firstNum,secondNum,thirdNum))
