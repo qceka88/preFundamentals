@@ -1,0 +1,6 @@
+inputWord = input()
+reversedWord=""
+for word in range(len(inputWord) - 1, -1, -1):
+    reversedWord += inputWord[word]
+
+print(reversedWord)
