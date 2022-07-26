@@ -1,0 +1,8 @@
+inputNum = float(input())
+
+while inputNum < 1 or inputNum > 100:
+    if inputNum > 1 and inputNum < 100:
+        break
+    inputNum = float(input())
+
+print(f"The number {inputNum} is between 1 and 100")
