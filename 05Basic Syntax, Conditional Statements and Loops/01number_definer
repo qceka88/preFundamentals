@@ -1,0 +1,18 @@
+inputNumber = float(input())
+
+if inputNumber == 0:
+    print("zero")
+if inputNumber > 0:
+    if inputNumber < 1:
+        print("small positive")
+    elif inputNumber > 1000000:
+        print("large positive")
+    else:
+        print("positive")
+elif inputNumber < 0:
+    if inputNumber > -1:
+        print("small negative")
+    elif inputNumber < -1000000:
+        print("large negative")
+    else:
+        print("negative")
