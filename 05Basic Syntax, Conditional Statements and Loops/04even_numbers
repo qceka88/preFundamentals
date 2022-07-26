@@ -1,0 +1,10 @@
+inputNum = int(input())
+
+for i in range(1, inputNum + 1):
+    currentNum = int(input())
+
+    if currentNum % 2 != 0:
+        print(f"{currentNum} is odd!")
+        break
+else:
+    print("All numbers are even.")
