@@ -1,0 +1,20 @@
+command = input()
+
+while command != "Welcome!":
+    currentName = command
+    lenghName = len(currentName)
+    if currentName == "Voldemort":
+        print("You must not speak of that name!" )
+        break
+    if lenghName < 5:
+        print(f"{currentName} goes to Gryffindor.")
+    elif lenghName == 5:
+        print(f"{currentName} goes to Slytherin.")
+    elif lenghName == 6:
+        print(f"{currentName} goes to Ravenclaw.")
+    else:
+        print(f"{currentName} goes to Hufflepuff.")
+    command=input()
+    if command == "Welcome!":
+        print("Welcome to Hogwarts.")
+
