@@ -1,0 +1,14 @@
+age = int(input())
+
+drinkType = ""
+
+if age <= 14:
+    drinkType = "toddy"
+elif age <= 18:
+    drinkType = "coke"
+elif age <= 21:
+    drinkType = "beer"
+else:
+    drinkType = "whisky"
+
+print(f"drink {drinkType}")
