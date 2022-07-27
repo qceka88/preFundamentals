@@ -1,0 +1,17 @@
+orders = int(input())
+totalPrice = 0
+for i in range(1, orders + 1):
+    pricePerCapsule = float(input())
+    days = int(input())
+    orderedCapsules = int(input())
+
+    if pricePerCapsule < 0.01 or pricePerCapsule > 100:
+        continue
+    if days < 1 or days > 31:
+        continue
+    if orderedCapsules < 1 or orderedCapsules > 2000:
+        continue
+    currentOrderPrice = pricePerCapsule * days * orderedCapsules
+    print(f"The price for the coffee is: ${currentOrderPrice:.2f}")
+    totalPrice += currentOrderPrice
+print(f"Total: ${totalPrice:.2f}")
