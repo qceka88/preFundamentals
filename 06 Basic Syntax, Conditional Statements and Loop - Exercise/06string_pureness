@@ -1,0 +1,9 @@
+numberInput = int(input())
+
+for i in range(1, numberInput + 1):
+    currentString = input()
+
+    if ","  in currentString or "."  in currentString or "_" in currentString:
+        print(f"{currentString} is not pure!")
+    else:
+        print(f"{currentString} is pure.")
