@@ -1,0 +1,9 @@
+command = input()
+
+list = []
+counter = 0
+for i in str(command):
+    if i.isupper():
+        list.append(counter)
+    counter += 1
+print(list)
