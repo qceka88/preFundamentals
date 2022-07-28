@@ -1,0 +1,13 @@
+firstString = input()
+secontString = input()
+
+lastString = firstString
+
+for symbol in range(len(firstString)):
+    left = secontString[:symbol + 1]
+    right = firstString[symbol + 1:]
+    currentString = left + right
+    if currentString == lastString:
+        continue
+    print(currentString)
+    lastString = currentString
