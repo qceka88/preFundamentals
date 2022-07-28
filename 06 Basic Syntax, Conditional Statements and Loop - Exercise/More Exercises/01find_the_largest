@@ -1,0 +1,10 @@
+num=input()
+
+list=[]
+for i in str(num):
+    list.append(i)
+
+list.sort(reverse=True)
+number=list
+
+print(*number,sep="")
