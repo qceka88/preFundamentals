@@ -1,0 +1,39 @@
+#############    Option 01 for resolving this problem   #################
+
+
+from math import floor
+
+budet = float(input())
+flourPrice1KG = float(input())
+
+eggsPrice = flourPrice1KG * 0.75
+milkPrice = flourPrice1KG * 1.25
+priceOneLoave = flourPrice1KG + eggsPrice + (milkPrice / 4)
+
+loaves = floor(budet / priceOneLoave)
+coloredEggs = 0
+
+for i in range(1, loaves + 1):
+    budet -= priceOneLoave
+    coloredEggs += 3
+    if i % 3 == 0:
+        coloredEggs -= (i - 2)
+print(f"You made {loaves} loaves of Easter bread! Now you have {coloredEggs} eggs and {budet:.2f}BGN left.")
+
+#############    Option 02 for resolving this problem   #################
+
+budet = float(input())
+flourPrice1KG = float(input())
+eggsPrice = flourPrice1KG * 0.75
+milkPrice = flourPrice1KG * 1.25
+priceOneLoave = flourPrice1KG + eggsPrice + (milkPrice / 4)
+
+coloredEggs = 0
+bakedLoaves = 0
+while (budet - priceOneLoave) > 0:
+    budet -= priceOneLoave
+    coloredEggs += 3
+    bakedLoaves += 1
+    if bakedLoaves % 3 == 0:
+        coloredEggs -= (bakedLoaves - 2)
+print(f"You made {bakedLoaves} loaves of Easter bread! Now you have {coloredEggs} eggs and {budet:.2f}BGN left.")
