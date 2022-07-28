@@ -1,0 +1,34 @@
+quantity = int(input())
+days = int(input())
+
+ornamentSet = 2
+treeSkirt = 5
+treeGarlant = 3
+treeLights = 15
+
+totalCosts = 0
+spiritPoints = 0
+
+for i in range(1, days + 1):
+    if i % 11 == 0:
+        quantity += 2
+    if i % 2 == 0:
+        spiritPoints += 5
+        totalCosts += quantity * ornamentSet
+    if i % 3 == 0:
+        spiritPoints += 13
+        totalCosts += (treeSkirt + treeGarlant) * quantity
+    if i % 5 == 0:
+        spiritPoints += 17
+        totalCosts += treeLights * quantity
+        if i % 3 == 0:
+            spiritPoints += 30
+    if i % 10 == 0:
+        spiritPoints -= 20
+        totalCosts += treeLights + treeGarlant + treeSkirt
+
+if days % 10 == 0:
+    spiritPoints -= 30
+
+print(f"Total cost: {totalCosts}")
+print(f"Total spirit: {spiritPoints}")
