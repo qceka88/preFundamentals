@@ -1,0 +1,24 @@
+animals = input()
+
+x = (animals.split(", "))
+list = []
+sheepCounter = 0
+counter = 0
+danger = False
+for i in x:
+    list.append(i)
+list.reverse()
+for j in list:
+    counter+=1
+    if j == "sheep":
+        sheepCounter += 1
+    if j  == "wolf" and counter == 1:
+        danger = True
+        print("Please go away and stop eating my sheep")
+        break
+    if j  == "wolf":
+        eatenSheep = sheepCounter
+        continue
+
+if danger is not True:
+    print(f"Oi! Sheep number {eatenSheep}! You are about to be eaten by a wolf!")
