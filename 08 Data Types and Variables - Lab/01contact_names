@@ -1,0 +1,5 @@
+name01=input()
+name02=input()
+delimiter=input()
+
+print(f"{name01}{delimiter}{name02}")
