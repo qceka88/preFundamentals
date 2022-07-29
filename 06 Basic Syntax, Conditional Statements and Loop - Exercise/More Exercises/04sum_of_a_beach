@@ -1,0 +1,10 @@
+inputLine = input()
+text = inputLine.lower()
+
+word = ['sand', 'water', 'fish', 'sun']
+counter = 0
+for symbols in word:
+    if symbols in text:
+        findedWord = text.count(symbols)
+        counter += findedWord
+print(counter)
