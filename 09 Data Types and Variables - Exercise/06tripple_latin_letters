@@ -1,0 +1,9 @@
+command = int(input())
+
+start = 97
+end = start + command
+
+for i in range(start, end):
+    for j in range(start, end):
+        for l in range(start, end):
+            print(chr(i), chr(j), chr(l), sep="")
