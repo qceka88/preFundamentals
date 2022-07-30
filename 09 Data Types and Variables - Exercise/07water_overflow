@@ -1,0 +1,13 @@
+refillNumber = int(input())
+
+capacity = 255
+addedWater = 0
+for i in range(refillNumber):
+    currentRefill = int(input())
+    if currentRefill > capacity:
+        print("Insufficient capacity!")
+    else:
+        capacity -= currentRefill
+        addedWater += currentRefill
+
+print(addedWater)
