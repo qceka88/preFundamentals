@@ -1,0 +1,22 @@
+lostFights = int(input())
+helmetPrice = float(input())
+swordPrice = float(input())
+shieldPrice = float(input())
+armorPrice = float(input())
+
+totalPrice = 0
+brokeShield = 0
+for i in range(1, lostFights + 1):
+    if i % 2 == 0:
+        totalPrice -= helmetPrice
+    if i % 3 == 0:
+        totalPrice -= swordPrice
+    if i % 6 == 0:
+        totalPrice -= shieldPrice
+        brokeShield += 1
+        if brokeShield == 2:
+            totalPrice -= armorPrice
+            brokeShield = 0
+
+print(f"Gladiator expenses: {abs(totalPrice):.2f} aureus")
+
