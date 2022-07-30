@@ -1,0 +1,7 @@
+charsNumber = int(input())
+totalSum = 0
+for i in range(charsNumber):
+    characterInput = input()
+    totalSum += ord(characterInput)
+
+print(f"The sum equals: {totalSum}")
