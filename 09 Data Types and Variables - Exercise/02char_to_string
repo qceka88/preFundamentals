@@ -1,0 +1,7 @@
+character01=input()
+character02=input()
+character03=input()
+
+string=character01+character02+character03
+
+print(string)
