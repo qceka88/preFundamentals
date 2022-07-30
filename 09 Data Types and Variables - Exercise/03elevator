@@ -1,0 +1,7 @@
+from math import ceil
+
+persongs = int(input())
+capacity = int(input())
+
+courses = ceil(persongs / capacity)
+print(courses)
