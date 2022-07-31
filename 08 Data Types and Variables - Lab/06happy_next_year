@@ -1,0 +1,14 @@
+year = int(input())
+
+happyYear = False
+
+while not happyYear:
+    year += 1
+    setYear = set()
+
+    for i in range(len(str(year))):
+        setYear.add(str(year)[i])
+
+    happyYear = len(setYear) == len(str(year))
+
+print(year)
