@@ -1,0 +1,23 @@
+num = int(input())
+
+open = False
+close = False
+openBracket=0
+closeBracket=0
+for i in range(1, num + 1):
+    currentSymbol = input()
+
+    if currentSymbol == '(' and close == False:
+        openBracket += 1
+        open = True
+    if currentSymbol == ')' and open == True:
+        closeBracket += 1
+        close = True
+    if open == True and close == True:
+        close=False
+        open=False
+
+if openBracket == closeBracket:
+    print("BALANCED")
+else:
+    print("UNBALANCED")
