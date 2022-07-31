@@ -1,0 +1,4 @@
+inputMetters=int(input())
+
+kilometers= inputMetters/1000
+print(f"{kilometers:.2f}")
