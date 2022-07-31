@@ -1,0 +1,17 @@
+number = int(input())
+
+searchedSum = [5, 7, 11]
+
+for i in range(1, number + 1):
+    symbol = str(i)
+    sumSymbol = 0
+    if len(symbol) < 2:
+        sumSymbol = int(symbol)
+    else:
+        symbol01 = int(symbol[0])
+        symbol02 = int(symbol[1])
+        sumSymbol = symbol01 + symbol02
+    if sumSymbol in searchedSum:
+        print(f"{i} -> True")
+    else:
+        print(f"{i} -> False")
