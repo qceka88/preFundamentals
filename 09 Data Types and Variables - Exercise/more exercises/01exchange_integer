@@ -1,0 +1,18 @@
+a = int(input())
+b = int(input())
+
+print("Before:")
+print(f"a = {a}")
+print(f"b = {b}")
+exchange = False
+temporaryValue1 = []
+temporaryValue2 = []
+while not exchange:
+    temporaryValue1.append(b)
+    temporaryValue2.append(a)
+    exchange = True
+newA = temporaryValue1
+newB = temporaryValue2
+print("After:")
+print("a =" ,*newA)
+print(f"b =",*newB)
