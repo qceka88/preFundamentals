@@ -1,0 +1,9 @@
+head = input()
+body = input()
+tail = input()
+
+completedAnimal = [head, body, tail]
+
+completedAnimal[0], completedAnimal[-1] = completedAnimal[-1], completedAnimal[0]
+
+print(completedAnimal)
