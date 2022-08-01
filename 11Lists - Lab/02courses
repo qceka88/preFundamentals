@@ -1,0 +1,7 @@
+coursesQty = int(input())
+
+coursesList = []
+
+for i in range(coursesQty):
+    coursesList.append(input())
+print(coursesList)
