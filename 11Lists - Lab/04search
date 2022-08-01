@@ -1,0 +1,16 @@
+control = int(input())
+keyword = input()
+
+unfilteredList = []
+
+for _ in range(control):
+    unfilteredList.append(input())
+
+filteredList = []
+
+for i in unfilteredList:
+    if keyword in i:
+        filteredList.append(i)
+
+print(unfilteredList)
+print(filteredList)
