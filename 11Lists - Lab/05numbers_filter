@@ -1,0 +1,21 @@
+number = int(input())
+
+pureList = []
+filteretList = []
+
+for i in range(number):
+    pureList.append(int(input()))
+
+command = input()
+
+for num in pureList:
+    if command == "even" and num %2==0:
+        filteretList.append(num)
+    elif command == "odd" and num % 2 !=0:
+        filteretList.append(num)
+    elif command == "negative" and num <0:
+        filteretList.append(num)
+    elif command == "positive" and num >=0:
+        filteretList.append(num)
+
+print(filteretList)
