@@ -1,0 +1,9 @@
+factor = int(input())
+counter = int(input())
+
+myList = []
+
+for i in range(1 , counter + 1):
+    myList.append(i * factor)
+
+print(myList)
