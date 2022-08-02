@@ -1,0 +1,7 @@
+initialString = input().split()
+
+convertedList = []
+
+for i in initialString:
+    convertedList.append(-int(i))
+print(convertedList)
