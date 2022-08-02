@@ -1,0 +1,18 @@
+incomeString = input().split(", ")
+countBeggars = int(input())
+
+finalSum = []
+incomeNUmbers = []
+counterIndex = 0
+
+for i in incomeString:
+    incomeNUmbers.append(int(i))
+
+while counterIndex < countBeggars:
+    currentSumBeggar = 0
+    for sumIndex in range(counterIndex, len(incomeNUmbers), countBeggars):
+        currentSumBeggar += incomeNUmbers[sumIndex]
+    counterIndex += 1
+    finalSum.append(currentSumBeggar)
+
+print(finalSum)
