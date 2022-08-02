@@ -1,0 +1,14 @@
+initialDeck = input().split()
+shuffle = int(input())
+
+for i in range(shuffle):
+    finalDeck = []
+    center = len(initialDeck) // 2
+    leftPart = initialDeck[0:center]
+    rightPart = initialDeck[center::]
+
+    for index in range(len(leftPart)):
+        finalDeck.append(leftPart[index])
+        finalDeck.append(rightPart[index])
+    initialDeck = finalDeck
+print(initialDeck)
