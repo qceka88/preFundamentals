@@ -1,0 +1,14 @@
+inputLine = input().split(", ")
+
+
+for i,v in enumerate(inputLine):
+    inputLine.remove(v)
+    inputLine.insert(i,int(v))
+
+for j in inputLine:
+    if j == 0:
+        inputLine.remove(0)
+        inputLine.append(0)
+
+
+print(inputLine)
