@@ -1,0 +1,23 @@
+giftsNames = input().split()
+command = input()
+
+while command != "No Money":
+    currentList = command.split()
+    curGift = currentList[1]
+    if "OutOfStock" in currentList:
+        for i, v in enumerate(giftsNames):
+            if giftsNames[i] == curGift:
+                giftsNames[i] = 'None'
+    elif "Required" in currentList:
+        index = int(currentList[2])
+        if 0 <= index < len(giftsNames):
+            giftsNames[index] = curGift
+    elif "JustInCase" in currentList:
+        giftsNames[-1] = curGift
+    command = input()
+
+for i in range(len(giftsNames)):
+    if "None" in giftsNames:
+        giftsNames.remove("None")
+
+print(*giftsNames, sep=' ')
