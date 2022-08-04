@@ -1,0 +1,28 @@
+fireLevel = input().split("#")
+waterQty = int(input())
+effort = 0
+fireList = []
+for fire in fireLevel:
+    currentCell = fire.split(" = ")
+    typeOfFire = currentCell[0]
+    valueOfCell = int(currentCell[1])
+    if "High" in typeOfFire and 81 <= valueOfCell <= 125:
+        if waterQty - valueOfCell >= 0:
+            effort += valueOfCell * 0.25
+            waterQty -= valueOfCell
+            fireList.append(valueOfCell)
+    elif "Medium" in typeOfFire and 51 <= valueOfCell <= 80:
+        if waterQty - valueOfCell >= 0:
+            effort += valueOfCell * 0.25
+            waterQty -= valueOfCell
+            fireList.append(valueOfCell)
+    elif "Low" in typeOfFire and 1 <= valueOfCell <= 50:
+        if waterQty - valueOfCell >= 0:
+            effort += valueOfCell * 0.25
+            waterQty -= valueOfCell
+            fireList.append(valueOfCell)
+print(f"Cells:")
+for cell in fireList:
+     print(f" - {int(cell)}", end="\n")
+print(f"Effort: {effort:.2f}")
+print(f"Total Fire: {sum(fireList)}")
