@@ -1,0 +1,22 @@
+raceList = input().split()
+
+middle = int(len(raceList) // 2)
+leftRacer = raceList[0:middle]
+rightRacer = raceList[len(raceList):middle:-1]
+leftTime = 0
+rightTIme = 0
+for raceL in leftRacer:
+    if int(raceL) == 0:
+        leftTime *= 0.8
+    else:
+        leftTime += int(raceL)
+for raceR in rightRacer:
+    if int(raceR) == 0:
+        rightTIme *= 0.8
+    else:
+        rightTIme += int(raceR)
+
+if leftTime < rightTIme:
+    print(f"The winner is left with total time: {leftTime:.1f}")
+else:
+    print(f"The winner is right with total time: {rightTIme:.1f}")
