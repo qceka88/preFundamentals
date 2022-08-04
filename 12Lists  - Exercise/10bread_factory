@@ -1,0 +1,39 @@
+initialCommands = input().split("|")
+energy = 100
+coins = 100
+openBakery = True
+for item in initialCommands:
+    command = item.split("-")
+    type = command[0]
+    value = int(command[1])
+    if "rest" in type:
+        tempEnergy = energy
+        if energy + value < 100:
+            energy += value
+        else:
+            energy = 100
+        gainedEnergy = energy - tempEnergy
+        print(f"You gained {gainedEnergy} energy.")
+        print(f"Current energy: {energy}.")
+    elif "order" in type:
+        if energy >= 30:
+            energy -= 30
+            coins += value
+            print(f"You earned {value} coins.")
+        else:
+            energy += 50
+            print("You had to rest!")
+    else:
+        if coins - value >= 0:
+            coins -= value
+            print(f"You bought {type}.")
+        else:
+            print(f"Closed! Cannot afford {type}.")
+            openBakery = False
+            break
+
+if openBakery:
+    print("Day completed!")
+    print(f"Coins: {coins}")
+    print(f"Energy: {energy}")
+
