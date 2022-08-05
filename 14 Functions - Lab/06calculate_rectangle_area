@@ -1,0 +1,9 @@
+a = int(input())
+b = int(input())
+
+
+def rectangular(a, b):
+    return a * b
+
+
+print(rectangular(a, b))
