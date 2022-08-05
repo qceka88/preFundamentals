@@ -1,0 +1,17 @@
+typeOrder = input()
+orderQty = int(input())
+
+price=0
+
+def bill(orderQty, price):
+    if typeOrder == "coffee":
+        price=1.50
+    elif typeOrder == "water":
+        price=1.00
+    elif typeOrder == "coke":
+        price=1.40
+    elif typeOrder == "snacks":
+        price=2.00
+    return f"{price * orderQty:.2f}"
+
+print(bill(orderQty,price))
