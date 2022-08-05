@@ -1,0 +1,3 @@
+numbersLine=list(map(float, input().split(" ")))
+absNumbers=[abs(x) for x in numbersLine]
+print(absNumbers)
