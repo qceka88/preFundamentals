@@ -1,0 +1,9 @@
+string = input()
+repeating = int(input())
+
+
+def finalString(string: str, repeating: int):
+    return string * repeating
+
+
+print(finalString(string, repeating))
