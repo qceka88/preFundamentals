@@ -1,0 +1,16 @@
+inputOperator = input()
+firstNum = int(input())
+secondNum = int(input())
+
+
+def calculation(firstNum, secondNum, inputOperator):
+    if inputOperator == "multiply":
+        return firstNum * secondNum
+    elif inputOperator == "divide":
+        return int(firstNum / secondNum)
+    elif inputOperator == "add":
+        return firstNum + secondNum
+    elif inputOperator == "subtract":
+        return firstNum - secondNum
+
+print(calculation(firstNum,secondNum,inputOperator))
