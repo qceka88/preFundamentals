@@ -1,0 +1,10 @@
+def loading_bar(number):
+    max_bar = 100
+    if number == max_bar:
+        print("100% Complete!\n[%%%%%%%%%%]")
+    else:
+        print(f"{number}% [{'%' * int(number / 10)}{'.' * int((max_bar - number) / 10)}]\nStill loading...")
+
+
+progress = int(input())
+loading_bar(progress)
