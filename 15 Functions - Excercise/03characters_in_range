@@ -1,0 +1,13 @@
+def character_range(one, two):
+    character_list = []
+    for i in range(one + 1, two):
+        character_list.append(chr(i))
+    return character_list
+
+
+first_char = ord(input())
+second_char = ord(input())
+
+result = character_range(first_char, second_char)
+
+print(*result)
