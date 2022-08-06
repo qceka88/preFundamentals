@@ -1,0 +1,12 @@
+def palindrome_integer(number):
+    palindrome = True
+    for i in number:
+        if i == i[::-1]:
+            palindrome = True
+        else:
+            palindrome = False
+        print(palindrome)
+
+
+input_line = input().split(", ")
+palindrome_integer(input_line)
