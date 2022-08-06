@@ -1,0 +1,22 @@
+def sum_numbers(one, two):
+    sum = one + two
+    return sum
+
+
+def subtract(sum, three):
+    subtract = sum - three
+    return subtract
+
+
+def add_and_subtract(one, two, three):
+    sum_num = sum_numbers(one, two)
+    subtract_num = subtract(sum_num, three)
+    return subtract_num
+
+
+first_number = int(input())
+second_number = int(input())
+third_number = int(input())
+
+result = add_and_subtract(first_number, second_number, third_number)
+print(result)
