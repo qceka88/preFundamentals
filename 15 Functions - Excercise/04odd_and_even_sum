@@ -1,0 +1,20 @@
+def odd_sum(numbers):
+    odd_sum = 0
+    for i in numbers:
+        if int(i) % 2 != 0:
+            odd_sum += int(i)
+    return odd_sum
+
+
+def even_sum(numbers):
+    even_numbers = 0
+    for i in numbers:
+        if int(i) % 2 == 0:
+            even_numbers += int(i)
+    return even_numbers
+
+
+input_line = input()
+odd_result = odd_sum(input_line)
+even_result = even_sum(input_line)
+print(f"Odd sum = {odd_result}, Even sum = {even_result}")
