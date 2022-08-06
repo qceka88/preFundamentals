@@ -1,0 +1,12 @@
+def factiorial_number(number):
+    for i in range(1,number):
+        number *= i
+    return number
+
+
+first_number = int(input())
+second_number = int(input())
+
+factorial_division= (factiorial_number(first_number)/factiorial_number(second_number))
+
+print(f"{factorial_division:.2f}")
