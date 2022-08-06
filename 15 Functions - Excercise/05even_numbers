@@ -1,0 +1,4 @@
+number = list(map(int, input().split(' ')))
+even_valid = lambda x: x % 2 == 0
+result=list(filter(even_valid,number))
+print(result)
