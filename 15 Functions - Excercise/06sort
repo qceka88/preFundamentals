@@ -1,0 +1,3 @@
+input_line = list(map(int, input().split()))
+sorted_list=list(sorted(input_line))
+print(sorted_list)
