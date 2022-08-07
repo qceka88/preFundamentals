@@ -1,0 +1,33 @@
+from math import floor, sqrt
+
+
+def center_point(line_one, line_two):
+    distance_one = (sqrt(abs(line_one[0]) ** 2 + abs(line_one[1]) ** 2)) + (
+        sqrt(abs(line_one[2]) ** 2 + abs(line_one[3]) ** 2))
+    distance_two = (sqrt(abs(line_two[0]) ** 2 + abs(line_two[1]) ** 2)) + (
+        sqrt(abs(line_two[2]) ** 2 + abs(line_two[3]) ** 2))
+    if distance_one >= distance_two:
+        return line_one
+    elif distance_one < distance_two:
+        return line_two
+
+
+def for_print(result):
+    point_one = abs(result[0]) + abs(result[1])
+    point_two = abs(result[2]) + abs(result[3])
+    if point_one <= point_two:
+        return result
+    elif point_one > point_two:
+        return [result[2], result[3], result[0], result[1]]
+
+
+line_one = []
+line_two = []
+for input_line in range(1, 8 + 1):
+    if input_line <= 4:
+        line_one.append(float(input()))
+    else:
+        line_two.append(float(input()))
+result = center_point(line_one, line_two)
+printable = for_print(result)
+print(f"({floor(printable[0])}, {floor(printable[1])})({floor(printable[2])}, {floor(printable[3])})")
