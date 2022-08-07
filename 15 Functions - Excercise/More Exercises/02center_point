@@ -1,3 +1,30 @@
+############################         OPTION ONE           ################################
+from math import floor, sqrt
+
+
+def center_point(point_one, point_two):
+    distance_one = sqrt(abs(point_one[0]) ** 2 + abs(point_one[1]) ** 2)
+    distance_two = sqrt(abs(point_two[0]) ** 2 + abs(point_two[1]) ** 2)
+    if distance_one <= distance_two:
+        return point_one
+    elif distance_one > distance_two:
+        return point_two
+
+
+x1 = float(input())
+y1 = float(input())
+x2 = float(input())
+y2 = float(input())
+point_one = [x1, y1]
+point_two = [x2, y2]
+
+result = center_point(point_one, point_two)
+
+print(f"({floor(result[0])}, {floor(result[1])})")
+
+############################         OPTION TWO           ################################
+
+
 from  math import  floor
 def center_point(point_one, point_two):
     if (abs(point_one[0]) + abs(point_one[1])) < (abs(point_two[0]) + abs(point_two[1])):
