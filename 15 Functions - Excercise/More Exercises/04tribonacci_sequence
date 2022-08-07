@@ -1,0 +1,15 @@
+def tribonacci_sequence(action):
+    list = [0, 0, 0]
+    for i in range(1, action + 1):
+        if sum(list) == 0:
+            list.append(int(1))
+        else:
+            list.append(int(list[-1]) + int(list[-2]) + int(list[-3]))
+    del list[:3:]
+    return list
+
+
+input_line = int(input())
+result = tribonacci_sequence(input_line)
+
+print(*result)
