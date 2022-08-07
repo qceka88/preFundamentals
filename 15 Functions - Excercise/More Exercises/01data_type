@@ -1,0 +1,19 @@
+def data_types(type, data):
+
+    if type =="int":
+        result=int(data)*2
+        print(result)
+    elif type == "real":
+        result=float(data)*1.5
+        print(f"{result:.2f}")
+    elif type == "string":
+        print(f"${data}$")
+
+
+
+
+
+type_input=input()
+input_data=input()
+data_types(type_input,input_data)
+
