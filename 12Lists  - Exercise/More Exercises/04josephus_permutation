@@ -1,0 +1,19 @@
+
+initial = input().split()
+
+number = int(input())
+
+final_list = []
+counter = 0
+while len(initial) > 0:
+    for i, v in enumerate(initial):
+        counter += 1
+        if counter % number == 0:
+            final_list.append(initial[i])
+            initial.pop(i)
+            counter=1
+            if len(initial) <= i:
+                counter=0
+
+
+print('['+",".join(final_list)+']')
