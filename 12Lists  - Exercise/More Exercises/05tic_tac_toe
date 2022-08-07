@@ -1,3 +1,4 @@
+###################       OPTION ONE         #################################
 def winer(one, two, three):
     if "1" == one[0] == one[1] == one[2] or "1" == two[0] == two[1] == two[2] or "1" == three[0] == three[1] == three[2]:
         return  "First player won"
@@ -21,3 +22,30 @@ third_row = input().split()
 
 result = winer(first_row,second_row,third_row)
 print(result)
+
+###################       OPTION TWO        #################################
+def winer(one, two, three, player):
+    if one[0] == one[1] == one[2] == player or two[0] == two[1] == two[2] == player or three[0] == three[1] == three[2] == player:
+        return True
+    elif one[0] == two[0] == three[0] == player or one[1] == two[1] == three[1] == player or one[2] == two[2] == three[2] == player:
+        return True
+    elif one[0] == two[1] == three[2]  == player or one[2] == two[1] == three[0] == player:
+        return True
+    return False
+
+
+first_row = input().split()
+second_row = input().split()
+third_row = input().split()
+fisrt_player = '1'
+second_player = '2'
+
+player01 = winer(first_row, second_row, third_row, fisrt_player)
+player02 = winer(first_row, second_row, third_row, second_player)
+
+if player01:
+    print("First player won")
+elif player02:
+    print("Second player won")
+else:
+    print("Draw!")
