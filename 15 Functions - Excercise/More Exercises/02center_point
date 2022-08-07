@@ -1,0 +1,20 @@
+from  math import  floor
+def center_point(point_one, point_two):
+    if (abs(point_one[0]) + abs(point_one[1])) < (abs(point_two[0]) + abs(point_two[1])):
+        return point_one
+    elif (abs(point_one[0]) + abs(point_one[1])) > (abs(point_two[0]) + abs(point_two[1])):
+        return point_two
+    elif (abs(point_one[0]) + abs(point_one[1])) == (abs(point_two[0]) + abs(point_two[1])):
+        return point_one
+
+
+x1 = float(input())
+y1 = float(input())
+x2 = float(input())
+y2 = float(input())
+point_one = [x1, y1]
+point_two = [x2, y2]
+
+result = center_point(point_one, point_two)
+
+print(f"({floor(result[0])}, {floor(result[1])})")
