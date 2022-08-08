@@ -1,0 +1,18 @@
+input_string = input()
+banned_letters = ['a', 'o', 'u', 'e', 'i']
+filtered_string = [letter for letter in input_string if letter.lower() not in banned_letters]
+print(''.join(filtered_string))
+
+
+
+
+
+############ TASK CONDITION ###########
+
+1.	No Vowels
+Using comprehension, write a program that receives a text and removes all its vowels, case inisensitive. Print the new text string after removing the vowels. The vowels that should be considered are 'a', 'o', 'u', 'e', 'i'.
+Examples
+Input	          Output
+Python	         Pythn
+ILovePython	     LvPythn
+
