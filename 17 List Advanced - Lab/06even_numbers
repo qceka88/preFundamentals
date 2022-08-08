@@ -1,0 +1,22 @@
+string = list(map(int, input().split(", ")))
+
+even_list = [num for num in range(len(string)) if string[num] % 2 == 0]
+print(even_list)
+
+######################################### TASK CONDITION ####################################
+
+6.	Even Numbers
+Write a program that reads a single string with numbers separated by comma and space ", ". Print the indices of all even numbers.
+
+Example01
+
+Input	
+3, 2, 1, 5, 8
+Output
+[1, 4]
+____________________________________________________
+Example02
+
+Input
+2, 4, 6, 9, 10	
+[0, 1, 2, 4]
