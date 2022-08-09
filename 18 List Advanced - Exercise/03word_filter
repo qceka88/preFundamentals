@@ -1,0 +1,28 @@
+input_line = input().split()
+output_line = [even_len for even_len in input_line if len(even_len) % 2 == 0]
+print(*output_line, sep='\n')
+
+
+
+################### TASK CONDITION ####################
+
+Using comprehension, write a program that receives some text, separated by space, and take only those words whose length is even. Print each word on a new line.
+
+Examples_01
+
+
+Input
+kiwi orange banana apple
+
+Output
+kiwi
+orange
+banana
+___________________________________
+Examples_02
+
+
+Input
+pizza cake pasta chips	
+Output
+cake
