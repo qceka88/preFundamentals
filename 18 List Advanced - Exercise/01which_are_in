@@ -1,0 +1,39 @@
+string_one = input().split(", ")
+string_two = input().split(", ")
+
+filtered_string = []
+
+for word_01 in string_one:
+    for word_02 in string_two:
+        if word_01 in word_02 and word_01 not in filtered_string:
+            filtered_string.append(word_01)
+
+print(filtered_string)
+
+
+
+
+####################         TASK CONDITION          ############################
+
+1.	Which Are In?
+You will be given two sequences of strings, separated by ", ". Print a new list containing only the strings from the first input line, which are substrings of any string in the second input line.
+
+Example  01
+
+
+Input	
+arp, live, strong
+lively, alive, harp, sharp, armstrong	
+
+Output
+['arp', 'live', 'strong']
+_____________________________________
+Example  02
+
+
+Input	
+tarp, mice, bull
+lively, alive, harp, sharp, armstrong	
+
+Output
+[]
