@@ -1,0 +1,46 @@
+string = input().split()
+
+final_message = []
+
+for word in string:
+    number = ""
+    current_word = ""
+    current_string = []
+    for symbol in word:
+        if symbol.isdigit():
+            number += symbol
+        else:
+            current_string.append(symbol)
+    aplha = chr(int(number))
+    current_string.insert(0, aplha)
+    if len(current_string) > 2:
+        current_string[1], current_string[-1] = current_string[-1], current_string[1]
+
+    for x in current_string:
+        current_word += x
+    final_message.append(current_word)
+
+print(*final_message)
+
+######################################### TASK CONDITION ###############################
+
+8.	Decipher This!
+You are given a secret message you should decipher. To do that, you need to know that in each word:
+•	the second and the last letter are switched (e.g., Holle means Hello)
+•	the first letter is replaced by its character code (e.g., 72 means H)
+
+Example_01
+
+Input	
+72olle 103doo 100ya	
+
+Output
+Hello good day
+____________________________________________
+Example_01
+
+Input	
+82yade 115te 103o	
+
+Output
+Ready set go
