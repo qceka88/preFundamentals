@@ -1,0 +1,61 @@
+class Party:
+    def __init__(self):
+        self.people_names = []
+
+    def names(self):
+        return [name for name in self.people_names]
+
+    def number_of_people(self):
+        return len(self.people_names)
+
+
+party = Party()
+
+while True:
+    command=input()
+    if command == "End":
+        break
+    name=command
+    party.people_names.append(name)
+
+print(f'Going: {", ".join(party.names())}')
+print(f"Total: {party.number_of_people()}")
+
+
+###########################################  TASK CONDITION    #########################################
+
+2.	Party
+
+Create a class Party that only has an attribute people – empty list. The __init__ method should not accept any parameters. 
+You will be given names of people (on separate lines) until you receive the command "End". Use the created class to solve this problem. 
+
+After you receive the "End" command, print 2 lines:
+•	"Going: {people}" - the people should be separated by comma and space ", ".
+•	"Total: {total_people_going}"
+
+Note: submit all of your code, including the class
+_____________________________________________
+
+Example_01
+
+Input	
+Peter
+John
+Katy
+
+Output
+End	Going: Peter, John, Katy
+Total: 3
+____________________________________________
+Example_02
+
+Input	
+Sam
+Eddy
+Edd
+Kris
+End	
+
+Output
+Going: Sam, Eddy, Edd, Kris
+Total: 4
