@@ -47,7 +47,7 @@ ________________________________________________________________________________
 
 Example
 
-Test Code        	(no input data in this task)Output
+Test Code        	(no input data in this task)
 article = Article(
     "Highest Recorded Temperature", 
     "Temperatures across Europe are unprecedented, according to scientists.", 
