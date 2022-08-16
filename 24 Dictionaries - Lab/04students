@@ -1,0 +1,59 @@
+students = {}
+key_word = ''
+while True:
+    command = input()
+    if ':' not in command:
+        for i in command:
+            if not i.isalpha():
+                key_word += chr(32)
+            else:
+                key_word += i
+        break
+    current_student = command.split(':')
+    name = current_student[0]
+    id = current_student[1]
+    course = current_student[2]
+    if course in students:
+        name_id = f':{name} - {id}'
+        students[course] += name_id
+    else:
+        students[course] = f'{name} - {id}'
+
+value = {value for key, value in students.items() if key_word == key}
+print('\n'.join(students[key_word].split(':')))
+
+#################################### TASK CONDITION ############################
+4.	Students
+You will be receiving names of students, their ID, and a course of programming they have taken in the format "{name}:{ID}:{course}". 
+On the last line, you will receive a name of a course in snake case lowercase letters. 
+You should print only the information of the students who have taken the corresponding course in the format: "{name} - {ID}" on separate lines. 
+Note: each student's ID will always be unique
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+Peter:123:programming basics
+John:5622:fundamentals
+Maya:89:fundamentals
+Lilly:633:fundamentals
+fundamentals	
+
+Output
+John - 5622
+Maya - 89
+Lilly - 633
+____________________________________________________________________________________________
+Example_02
+
+Input
+Alex:6:programming basics
+Maria:7:programming basics
+Kaloyan:9:advanced
+Todor:10:fundamentals
+programming_basics	
+
+Output
+Alex - 6
+Maria - 7
+
