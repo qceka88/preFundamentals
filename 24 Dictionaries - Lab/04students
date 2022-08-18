@@ -13,14 +13,14 @@ while True:
     name = current_student[0]
     id = current_student[1]
     course = current_student[2]
-    if course in students:
-        name_id = f':{name} - {id}'
-        students[course] += name_id
-    else:
-        students[course] = f'{name} - {id}'
+    if course not in students:
+        students[course] = []
+    name_id = f'{name} - {id}'
+    students[course].append(name_id)
 
-value = {value for key, value in students.items() if key_word == key}
-print('\n'.join(students[key_word].split(':')))
+value = students[key_word]
+print('\n'.join(name for name in value))
+
 
 #################################### TASK CONDITION ############################
 4.	Students
