@@ -1,0 +1,42 @@
+string = "".join(letter for letter in input().split())
+string_dictionary = {}
+
+for char in string:
+    if char not in string_dictionary:
+        string_dictionary[char] = 0
+    string_dictionary[char] += 1
+
+
+for letter,count in string_dictionary.items():
+    print(f"{letter} -> {int(count)}")
+    
+    #################################### TASK CONDITION ############################
+    1.	Count Chars in a String
+Write a program that counts all characters in a string except for space (" "). 
+
+Print all the occurrences in the following format:
+"{char} -> {occurrences}"
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+text	
+
+Output
+t -> 2
+e -> 1
+x -> 1
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+text text text
+
+Output
+t -> 6
+e -> 3
+x -> 3
+
+    
