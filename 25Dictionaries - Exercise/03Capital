@@ -1,0 +1,39 @@
+country = input().split(', ')
+capitol = input().split(', ')
+result = dict(zip(country, capitol))
+
+print('\n'.join(f"{key} -> {value}" for key,value in result.items()))
+
+
+#################################### TASK CONDITION ############################
+
+3.	Capitals
+Using a dictionary comprehension, write a program that receives country names on the first line,
+separated by comma and space ", ", and their corresponding capital cities on the second line (again separated by comma and space ", ").
+Print each country with their capital on a separate line in the following format: "{country} -> {capital}".
+
+Hints
+•	You could use the zip() method.
+____________________________________________________________________________________________
+Example_01
+
+Input
+Bulgaria, Romania, Germany, England
+Sofia, Bucharest, Berlin, London
+
+Output
+Bulgaria -> Sofia
+Romania -> Bucharest
+Germany -> Berlin
+England -> London
+____________________________________________________________________________________________
+Example_02
+
+Input
+Bulgaria, Germany, France
+Varna, Frankfurt, Paris	
+
+Output
+Bulgaria -> Varna
+Germany -> Frankfurt
+France -> Paris
