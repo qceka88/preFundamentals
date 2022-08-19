@@ -18,13 +18,13 @@ while True:
         obtained = True
         break
     if items['fragments'] >= 250:
-        print("Dragonwrath obtained!")
+        print("Valanyr obtained!")
         items['fragments'] -= 250
         obtained = True
         break
     if items['motes'] >= 250:
         items['motes'] -= 250
-        print("Valanyr obtained!")
+        print("Dragonwrath obtained!")
         obtained = True
         break
     input_line=input()
