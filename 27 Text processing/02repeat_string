@@ -1,0 +1,46 @@
+class String:
+    def __init__(self, string):
+        self.string = string
+
+    def repeating(self):
+        return ''.join(map(lambda x: x * len(x), self.string))
+
+
+input_string = input().split(' ')
+word = String(input_string)
+print(word.repeating())
+       
+
+
+#################################### TASK CONDITION ############################
+2.	Repeat Strings
+Write a program that reads a sequence of strings, separated by a single space. 
+Each string should be repeated N times, where N is the length of the string. 
+Print the final strings concatenated into one string.
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+hi abc add	
+
+Output
+hihiabcabcabcaddaddadd
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+work	
+
+Output
+workworkworkwork
+
+____________________________________________________________________________________________
+Example_03
+
+Input
+ball	
+
+Output
+ballballballball
