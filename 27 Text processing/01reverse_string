@@ -1,0 +1,49 @@
+ class Reversed:
+    def __init__(self, text):
+        self.text = text
+
+    def reversed_string(self):
+        return f'{self.text} = {self.text[::-1]}'
+
+
+comand = input()
+while comand != 'end':
+    rev = Reversed(comand)
+    print(rev.reversed_string())
+    comand = input()
+       
+
+
+#################################### TASK CONDITION ############################
+
+1.	Reverse Strings
+You will be given strings on separate lines until you receive an "end" command. 
+Write a program that reverses strings and prints each pair on a separate line in the format "{word} = {reversed_word}".
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+helLo
+Softuni
+bottle
+end	
+
+Output
+helLo = oLleh
+Softuni = inutfoS
+bottle = elttob
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+Dog
+caT
+chAir
+end	
+
+Output
+Dog = goD
+caT = Tac
+chAir = riAhc
