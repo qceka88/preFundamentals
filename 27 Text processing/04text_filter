@@ -1,0 +1,37 @@
+class Banned:
+    def __init__(self, ban, text):
+        self.ban = ban
+        self.text = text
+
+    def filtering(self):
+        for banned_word in self.ban:
+            while banned_word in self.text:
+                self.text = self.text.replace(banned_word, '*' * len(banned_word))
+        return self.text
+
+
+banned_list = input().split(', ')
+unfiltered_text = input()
+ban = Banned(banned_list, unfiltered_text)
+print(ban.filtering())
+       
+
+
+#################################### TASK CONDITION ############################
+4.	Text Filter
+Write a program that receives a text and a string of banned words,
+separated by a comma and space ", ". All banned words in the text 
+should be replaced with the number of asterisks "*", equal to the word's length. 
+The ban list will be entered on the first input line and the text - on the second input line. 
+
+____________________________________________________________________________________________
+Example
+
+Input
+Linux, Windows
+
+Output (output is on single row, just for easy reading is shown here on several rows)
+It is not Linux, it is GNU/Linux. Linux is merely the kernel, while GNU adds the functionality.
+Therefore we owe it to them by calling the OS GNU/Linux! Sincerely,
+a Windows client	It is not *****, it is GNU/*****. ***** is merely the kernel, 
+while GNU adds the functionality. Therefore we owe it to them by calling the OS GNU/*****! Sincerely, a ******* client
