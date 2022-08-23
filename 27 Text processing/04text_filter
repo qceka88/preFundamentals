@@ -27,11 +27,13 @@ The ban list will be entered on the first input line and the text - on the secon
 ____________________________________________________________________________________________
 Example
 
-Input
+Input (Second part, the text for censoring must be on single row, for easy reading si on several)
 Linux, Windows
-
-Output (output is on single row, just for easy reading is shown here on several rows)
 It is not Linux, it is GNU/Linux. Linux is merely the kernel, while GNU adds the functionality.
 Therefore we owe it to them by calling the OS GNU/Linux! Sincerely,
-a Windows client	It is not *****, it is GNU/*****. ***** is merely the kernel, 
+a Windows client
+
+Output (output is on single row, just for easy reading is shown here on several rows)
+
+It is not *****, it is GNU/*****. ***** is merely the kernel, 
 while GNU adds the functionality. Therefore we owe it to them by calling the OS GNU/*****! Sincerely, a ******* client
