@@ -1,0 +1,46 @@
+def validation(name):
+    validated = True
+    if 3 <= len(name) <= 16:
+        if not ' ' in name:
+            for character in name:
+                if not (character.isalnum() or '-' in character or '_' in character):
+                        validated=False
+            if validated:
+                return print(name)
+
+
+input_line = input().split(', ')
+
+for username in input_line:
+    valid_username = validation(username)
+
+       
+
+
+#################################### TASK CONDITION ############################
+1.	Valid Usernames
+Write a program that reads usernames on a single line (separated by ", ") and prints all valid usernames on separate lines. 
+A valid username:
+•	has length between 3 and 16 characters inclusive
+•	can contain only letters, numbers, hyphens, and underscores
+•	has no redundant symbols before, after, or in between
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+sh, too_long_username, !lleg@l ch@rs, jeffbutt	
+
+Output
+jeffbutt
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+Jeff, john45, ab, cd, peter-ivanov, @smith	
+
+Output
+Jeff
+John45
+peter-ivanov
