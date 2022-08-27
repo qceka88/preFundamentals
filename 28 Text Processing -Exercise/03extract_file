@@ -1,0 +1,29 @@
+directory = input().split('\\')
+file = directory[-1].split('.')
+print(f'File name: {file[0]}')
+print(f'File extension: {file[1]}')
+       
+
+
+#################################### TASK CONDITION ############################
+3.	 Extract File
+Write a program that reads the path to a file and subtracts the file name and its extension.
+____________________________________________________________________________________________
+Example_01
+
+Input
+C:\Internal\training-internal\Template.pptx	
+
+Output
+File name: Template
+File extension: pptx
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+C:\Projects\Data-Structures\LinkedList.cs
+
+Output
+File name: LinkedList
+File extension: cs
