@@ -1,0 +1,44 @@
+class Encryption:
+    def __init__(self, text):
+        self.text = text
+        self.word = ''
+
+    def encrypt(self):
+        for symbol in self.text:
+            new_symol = 3 + ord(symbol)
+            self.word += chr(new_symol)
+        return self.word
+
+
+input_line = input()
+
+encrypted = Encryption(input_line)
+print(encrypted.encrypt())
+       
+
+
+#################################### TASK CONDITION ############################
+
+4.	 Caesar Cipher
+Write a program that returns an encrypted version of the same text. 
+Encrypt the text by replacing each character with the corresponding 
+character threepositions forward in the ASCII table. 
+For example, A would be replaced with D, B would become E, and so on. Print the encrypted text.
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+Programming is cool!	
+
+Output
+Surjudpplqj#lv#frro$
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+One year has 365 days.	
+
+Output
+Rqh#|hdu#kdv#698#gd|v1
