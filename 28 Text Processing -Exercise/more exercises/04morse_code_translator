@@ -1,0 +1,45 @@
+english_to_morse = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
+                    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
+                    'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+                    'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+                    '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.'}
+
+morse_to_english = {value: key for key, value in english_to_morse.items()}
+input_line = input().split(' | ')
+message = ''
+
+for word in input_line:
+    current = word.split()
+    for letter in current:
+        message += morse_to_english[letter]
+    message += ' '
+
+print(message)
+
+       
+
+
+#################################### TASK CONDITION ############################
+4.	Morse Code Translator
+Write a program that translates messages from Morse code to English (capital letters). 
+Use this page to help you (without the numbers). The words will be separated by a space (' ').
+Each word is separated by a ' | '.
+Print the found words on one line, separated by a space.
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+.. | -- .- -.. . |  -.-- --- ..- | .-- .-. .. - . | .- | .-.. --- -. --. | -.-. --- -.. .	
+
+Output
+I MADE YOU WRITE A LONG CODE
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+.. | .... --- .--. . | -.-- --- ..- | .- .-. . | -. --- - | -- .- -..	
+
+Output
+I HOPE YOU ARE NOT MAD
