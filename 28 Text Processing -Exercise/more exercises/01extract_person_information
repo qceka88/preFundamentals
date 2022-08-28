@@ -1,0 +1,59 @@
+def extracting(input_data):
+    name_start = 0
+    name_end = 0
+    age_start = 0
+    age_end = 0
+    for i in range(len(input_data)):
+        if input_data[i] == "@":
+            name_start = int(i + 1)
+        elif input_data[i] == '|':
+            name_end = int(i)
+        if input_data[i] == '#':
+            age_start = int(i + 1)
+        elif input_data[i] == '*':
+            age_end = int(i)
+    name = input_data[name_start:name_end]
+    age = input_data[age_start:age_end]
+    return f"{name} is {age} years old."
+
+number_line = int(input())
+
+for i in range(number_line):
+    current_data = input()
+    print(extracting(current_data))
+      
+
+
+#################################### TASK CONDITION ############################
+1.	Extract Person Information
+Write a program that reads N lines of strings and extracts the name and the age of a given person:
+•	The person's name will be surrounded by "@" and "|" in the format "@{name}|".
+•	The person's age will be surrounded by "#" and "*" in the format "#{age}*".
+Example: "Hello my name is @Peter| and I am #20* years old." 
+For each found name-age pair, print a line in the following format "{name} is {age} years old."
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+2
+Here is a name @George| and an age #18*
+Another name @Billy| #35* is his age	
+
+Output
+George is 18 years old.
+Billy is 35 years old.
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+3
+random name @lilly| random digits #5*age
+@Marry| with age #19*
+here Comes @Garry|he is #48* years old	
+
+Output
+lilly is 5 years old.
+Marry is 19 years old.
+Garry is 48 years old.
