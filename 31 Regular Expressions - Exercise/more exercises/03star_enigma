@@ -1,0 +1,120 @@
+import re
+
+
+def key_finder(input_data):
+    key = r'[Ss]|[aA]|[Tt]|[rR]'
+    result = len(re.findall(key, input_data))
+    return result
+
+
+def decryption(input_data, key_number):
+    new_message = ''
+    for i in range(len(input_data)):
+        new_letter = ord(input_data[i]) - key_number
+        new_message += chr(new_letter)
+    return new_message
+
+
+def battle(input_data):
+    action = r'@{1}([A-z]*)[^\@\-\!\>]*:{1}(\d+)[^\@\-\!\>]*!{1}([A-Z])!{1}[^\@\-\!\>]*\->(\d+)'
+    result = re.search(action, input_data)
+    return result
+
+
+messages_number = int(input())
+log_dict = {'Attacked': [], 'Destroyed': []}
+for _ in range(messages_number):
+    encrypted_message = input()
+    message_key = key_finder(encrypted_message)
+    decrypted_message = decryption(encrypted_message, message_key)
+    battle_action = battle(decrypted_message)
+    if battle_action is not None:
+        if battle_action.group(3) == 'A':
+            log_dict['Attacked'].append(battle_action.group(1))
+        elif battle_action.group(3) == 'D':
+            log_dict['Destroyed'].append(battle_action.group(1))
+
+for actions, planet in log_dict.items():
+    print(f'{actions} planets: {len(planet)}')
+    for name in sorted(planet):
+        print(f'-> {name}')
+
+
+
+
+#################################### TASK CONDITION ############################
+3.	Star Enigma
+
+The war is in its peak, but you, young Padawan, can turn the tides with your programming skills. 
+You are tasked to create a program to decrypt the messages of The Order and prevent the death of hundreds of lives. 
+You will receive several messages, which are encrypted using the legendary star enigma.
+You should decrypt the messages, following these rules:
+To properly decrypt a message, you should count all the letters [s, t, a, r] – case insensitive 
+and remove the count from the current ASCII value of each symbol of the encrypted message.
+After decryption:
+Each message should have a planet name, population, attack type ('A', as attack or 'D', as destruction) and soldier count.
+The planet name starts after '@' and contains only letters from the Latin alphabet. 
+The planet population starts after ':' and is an Integer;
+The attack type may be "A"(attack) or "D"(destruction) and must be surrounded by "!" (exclamation mark).
+The soldier count starts after "->" and should be an Integer.
+The order in the message should be: planet name -> planet population -> attack type -> soldier count.
+Each part can be separated from the others by any character except: '@', '-', '!', ':' and '>'.
+Input / Constraints
+•	The first line holds n – the number of messages– integer in range [1…100];
+•	On the next n lines, you will be receiving encrypted messages.
+Output
+After decrypting all messages, you should print the decrypted information in the following format:
+First print the attacked planets, then the destroyed planets.
+"Attacked planets: {attackedPlanetsCount}"
+"-> {planetName}"
+"Destroyed planets: {destroyedPlanetsCount}"
+"-> {planetName}"
+The planets should be ordered by name alphabetically.
+
+____________________________________________________________________________________________
+Example_01
+
+Input
+2
+STCDoghudd4=63333$D$0A53333
+EHfsytsnhf?8555&I&2C9555SR	
+
+Output
+Attacked planets: 1
+-> Alderaa
+Destroyed planets: 1
+-> Cantonica	
+
+Explanation
+We receive two messages, to decrypt them we calculate the key:
+First message has decryption key 3. So we substract from each characters code 3.
+PQ@Alderaa1:30000!A!->20000
+The second message has key 5.
+@Cantonica:3000!D!->4000NM
+Both messages are valid and they contain planet, population, attack type and soldiers count. 
+After decrypting all messages we print each planet according the format given.
+
+____________________________________________________________________________________________
+Example_02
+
+Input
+3
+tt(''DGsvywgerx>6444444444%H%1B9444
+GQhrr|A977777(H(TTTT
+EHfsytsnhf?8555&I&2C9555SR	
+
+Output
+Attacked planets: 0
+Destroyed planets: 2
+-> Cantonica
+-> Coruscant
+
+Explanation
+We receive three messages.
+Message one is decrypted with key 4:
+pp$##@Coruscant:2000000000!D!->5000
+Message two is decrypted with key 7:
+@Jakku:200000!A!MMMM
+This is invalid message, missing soldier count, so we continue.
+The third message has key 5.
+@Cantonica:3000!D!->4000NM
