@@ -58,69 +58,7 @@ for demon in demon_names:
 for name in sorted(demons):
     print(f"{name} - {demons[name][0]} health, {demons[name][1]:.2f} damage")
     
-    
-    import re
-
-
-def health_calculation(input_data):
-    health_str = ''
-    pattern = r'([A-z]*)([^\+\-\/\*\.\,\d])'
-    extracting = re.findall(pattern, input_data)
-    if extracting:
-        for groups in extracting:
-            for letters in groups:
-                health_str += letters
-        health = sum(ord(i) for i in health_str)
-        return health
-    else:
-        return None
-
-
-def base_damage(input_data):
-    damage_total = 0
-    pattern = r'(\-?)([0-9]+(\.[0-9]+)*)'
-    extracting = re.findall(pattern, input_data)
-    if not extracting:
-        return 0
-    for damage in extracting:
-        if damage[0] == '-':
-            damage_total -= float(damage[1])
-        else:
-            damage_total += float(damage[1])
-    return damage_total
-
-
-def boost_decrease(input_data, value):
-    factor = ''
-    new_dagame = value
-    pattern = r'(\*+|\/+)'
-    extracting = re.findall(pattern, input_data)
-    for symbol in extracting:
-        for sym in symbol:
-            factor += sym
-    for index in factor:
-        if '*' == index:
-            new_dagame = new_dagame * 2
-        else:
-            new_dagame = new_dagame / 2
-    return new_dagame
-
-
-demon_names = (''.join(input().split())).split(',')
-demons = {}
-for demon in demon_names:
-    health = health_calculation(demon)
-    if health is None:
-        continue
-    damage = base_damage(demon)
-    if ('*' in demon or '/' in demon) and damage != 0:
-        damage = boost_decrease(demon, damage)
-    demons[demon] = [health, damage]
-for name in sorted(demons):
-    print(f"{name} - {demons[name][0]} health, {demons[name][1]:.2f} damage")
-
-
-
+  
 
 #################################### TASK CONDITION ############################
 4.	Nether Realms
