@@ -4,3 +4,6 @@ In trying to learn Python
 
 All codes in this folder are free use for everyone!
 All codes are writen on Python!
+
+Web site of SoftUni!
+https://softuni.bg/
